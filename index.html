@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioWeb PRO | Elite CEE Prep</title>
+    <link rel="stylesheet" href="Game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <div class="nav-brand">BioWeb<span>PRO</span></div>
+    <div class="nav-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('library')">Library</a>
+        <a onclick="showPage('physics')">Physics</a>
+        <a onclick="showPage('chemistry')">Chemistry</a>
+        <a onclick="showPage('botany')">Botany</a>
+        <a onclick="showPage('zoology')">Zoology</a>
+        <a onclick="showPage('mega-mock')" class="nav-mock-btn">Mega Mock</a>
+        <button id="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+    </div>
+</nav>
+
+<div class="container">
+    <section id="home" class="page active-page">
+        <div class="hero">
+            <h1>Elite Entrance Portal</h1>
+            <p>Optimized for MBBS CEE & NEB Excellence</p>
+            
+            <div class="stats-row">
+                <span class="stat-pill">Personal Best: <span id="best-score">0.00</span></span>
+            </div>
+
+            <div id="golden-point-box">
+                <small>GOLDEN POINT</small>
+                <p id="golden-point-text">Fetching latest data...</p>
+            </div>
+            <button class="cta-btn" onclick="showPage('mega-mock')">Launch Mega Mock Exam</button>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card" onclick="showPage('physics')">
+                <h3>Physics</h3>
+                <p>Mechanics, Optics, & Modern Physics</p>
+                <span class="badge">50 Qns Pattern</span>
+            </div>
+            <div class="info-card" onclick="showPage('chemistry')">
+                <h3>Chemistry</h3>
+                <p>Organic, Inorganic, & Physical</p>
+                <span class="badge">50 Qns Pattern</span>
+            </div>
+            <div class="info-card" onclick="showPage('botany')">
+                <h3>Botany</h3>
+                <p>Plant Physio, Genetics, & Anatomy</p>
+                <span class="badge">40 Qns Pattern</span>
+            </div>
+            <div class="info-card" onclick="showPage('zoology')">
+                <h3>Zoology</h3>
+                <p>Human Systems & Animal Kingdom</p>
+                <span class="badge">40 Qns Pattern</span>
+            </div>
+            <div class="info-card mat-highlight" onclick="showPage('mat')">
+                <h3>MAT</h3>
+                <p>Mental Agility & IQ Strategy</p>
+                <span class="badge">20 Qns Pattern</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="library" class="page">
+        <div class="cell-header"><h2>Digital Resource Library</h2></div>
+        <div id="library-main" class="info-grid">
+            <div class="info-card" onclick="openNote('physics')"><h3>Physics Sheet</h3><p>Formulae & Constants</p></div>
+            <div class="info-card" onclick="openNote('chemistry')"><h3>Chemistry Hub</h3><p>Named Reactions & Trends</p></div>
+            <div class="info-card" onclick="openNote('biology')"><h3>Biology Vault</h3><p>Mnemonics & Key Cycles</p></div>
+            <div class="info-card" onclick="openNote('mat')"><h3>MAT Logic</h3><p>IQ & Reasoning Tricks</p></div>
+        </div>
+        <div id="note-display" style="display:none;" class="question-card">
+            <button class="badge-btn" onclick="closeNote()">← Back to Library</button>
+            <div id="note-content" class="rich-text"></div>
+        </div>
+    </section>
+
+    <section id="physics" class="page"><div class="cell-header"><h2>Physics Mock Hall</h2></div><div id="physics-container" class="exam-init-box"><button class="cta-btn" onclick="startSubjectExam('physics')">Start Physics</button></div></section>
+    <section id="chemistry" class="page"><div class="cell-header"><h2>Chemistry Mock Hall</h2></div><div id="chemistry-container" class="exam-init-box"><button class="cta-btn" onclick="startSubjectExam('chemistry')">Start Chemistry</button></div></section>
+    <section id="botany" class="page"><div class="cell-header"><h2>Botany Mock Hall</h2></div><div id="botany-container" class="exam-init-box"><button class="cta-btn" onclick="startSubjectExam('botany')">Start Botany</button></div></section>
+    <section id="zoology" class="page"><div class="cell-header"><h2>Zoology Mock Hall</h2></div><div id="zoology-container" class="exam-init-box"><button class="cta-btn" onclick="startSubjectExam('zoology')">Start Zoology</button></div></section>
+    <section id="mat" class="page"><div class="cell-header"><h2>Mental Agility Hall</h2></div><div id="mat-container" class="exam-init-box"><button class="cta-btn" onclick="startSubjectExam('mat')">Start MAT</button></div></section>
+
+    <section id="mega-mock" class="page">
+        <div class="cell-header"><h2>Mega Mock Exam (Full CEE)</h2></div>
+        <div id="mega-mock-container" class="exam-init-box">
+            <p style="margin-bottom:20px;">200 Questions | 3 Hours | -0.25 Negative Marking</p>
+            <button class="cta-btn" onclick="startMegaMock()">Enter Mock Simulation</button>
+        </div>
+    </section>
+</div>
+
+<script src="Game.js"></script>
+</body>
+</html>
