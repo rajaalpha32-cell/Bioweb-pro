@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="6TME00NNhpG3_YiLsQsICEVxbOaojefSw6dFhvunjG4" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BioWeb PRO: The elite entrance portal for NEB and MBBS CEE preparation. Practice Physics, Chemistry, Botany, and Zoology MCQs with mock exams.">
-    <title>BioWeb PRO | Elite CEE Prep</title>
+    <meta name="description" content="BioWeb PRO: Elite entrance portal for NEB and MBBS CEE preparation.">
+    <title>BioWeb PRO | Elite Cloud</title>
     <link rel="stylesheet" href="Game.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
@@ -29,59 +33,23 @@
     <section id="home" class="page active-page">
         <div class="hero">
             <h1>Elite Entrance Portal</h1>
-            <p>Optimized for MBBS CEE & NEB Excellence</p>
-            
+            <p>Cloud-Powered MBBS CEE Excellence</p>
             <div class="stats-row">
                 <span class="stat-pill">Personal Best: <span id="best-score">0.00</span></span>
             </div>
-
             <div id="golden-point-box">
                 <small>GOLDEN POINT</small>
-                <p id="golden-point-text">Fetching latest data...</p>
+                <p id="golden-point-text">Fetching latest cloud data...</p>
             </div>
             <button class="cta-btn" onclick="showPage('mega-mock')">Launch Mega Mock Exam</button>
         </div>
         
         <div class="info-grid">
-            <div class="info-card" onclick="showPage('physics')">
-                <h3>Physics</h3>
-                <p>Mechanics, Optics, & Modern Physics</p>
-                <span class="badge">50 Qns Pattern</span>
-            </div>
-            <div class="info-card" onclick="showPage('chemistry')">
-                <h3>Chemistry</h3>
-                <p>Organic, Inorganic, & Physical</p>
-                <span class="badge">50 Qns Pattern</span>
-            </div>
-            <div class="info-card" onclick="showPage('botany')">
-                <h3>Botany</h3>
-                <p>Plant Physio, Genetics, & Anatomy</p>
-                <span class="badge">40 Qns Pattern</span>
-            </div>
-            <div class="info-card" onclick="showPage('zoology')">
-                <h3>Zoology</h3>
-                <p>Human Systems & Animal Kingdom</p>
-                <span class="badge">40 Qns Pattern</span>
-            </div>
-            <div class="info-card mat-highlight" onclick="showPage('mat')">
-                <h3>MAT</h3>
-                <p>Mental Agility & IQ Strategy</p>
-                <span class="badge">20 Qns Pattern</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="library" class="page">
-        <div class="cell-header"><h2>Digital Resource Library</h2></div>
-        <div id="library-main" class="info-grid">
-            <div class="info-card" onclick="openNote('physics')"><h3>Physics Sheet</h3><p>Formulae & Constants</p></div>
-            <div class="info-card" onclick="openNote('chemistry')"><h3>Chemistry Hub</h3><p>Named Reactions & Trends</p></div>
-            <div class="info-card" onclick="openNote('biology')"><h3>Biology Vault</h3><p>Mnemonics & Key Cycles</p></div>
-            <div class="info-card" onclick="openNote('mat')"><h3>MAT Logic</h3><p>IQ & Reasoning Tricks</p></div>
-        </div>
-        <div id="note-display" style="display:none;" class="question-card">
-            <button class="badge-btn" onclick="closeNote()">← Back to Library</button>
-            <div id="note-content" class="rich-text"></div>
+            <div class="info-card" onclick="showPage('physics')"><h3>Physics</h3><p>Mechanics & Modern</p><span class="badge">Cloud Live</span></div>
+            <div class="info-card" onclick="showPage('chemistry')"><h3>Chemistry</h3><p>Organic & Physical</p><span class="badge">Cloud Live</span></div>
+            <div class="info-card" onclick="showPage('botany')"><h3>Botany</h3><p>Plant Physio & Genetics</p><span class="badge">Cloud Live</span></div>
+            <div class="info-card" onclick="showPage('zoology')"><h3>Zoology</h3><p>Human Systems</p><span class="badge">Cloud Live</span></div>
+            <div class="info-card mat-highlight" onclick="showPage('mat')"><h3>MAT</h3><p>Mental Agility</p><span class="badge">Cloud Live</span></div>
         </div>
     </section>
 
@@ -92,14 +60,28 @@
     <section id="mat" class="page"><div class="cell-header"><h2>Mental Agility Hall</h2></div><div id="mat-container" class="exam-init-box"><button class="cta-btn" onclick="startSubjectExam('mat')">Start MAT</button></div></section>
 
     <section id="mega-mock" class="page">
-        <div class="cell-header"><h2>Mega Mock Exam (Full CEE)</h2></div>
+        <div class="cell-header"><h2>Mega Mock Exam</h2></div>
         <div id="mega-mock-container" class="exam-init-box">
-            <p style="margin-bottom:20px;">200 Questions | 3 Hours | -0.25 Negative Marking</p>
+            <p>200 Questions | Cloud Sync Active</p>
             <button class="cta-btn" onclick="startMegaMock()">Enter Mock Simulation</button>
+        </div>
+    </section>
+
+    <section id="library" class="page">
+        <div class="cell-header"><h2>Resource Library</h2></div>
+        <div id="library-main" class="info-grid">
+            <div class="info-card" onclick="openNote('physics')"><h3>Physics Sheet</h3></div>
+            <div class="info-card" onclick="openNote('chemistry')"><h3>Chemistry Hub</h3></div>
+            <div class="info-card" onclick="openNote('biology')"><h3>Biology Vault</h3></div>
+            <div class="info-card" onclick="openNote('mat')"><h3>MAT Logic</h3></div>
+        </div>
+        <div id="note-display" style="display:none;" class="question-card">
+            <button class="back-btn" onclick="closeNote()">Back to Library</button>
+            <div id="note-content"></div>
         </div>
     </section>
 </div>
 
 <script src="Game.js"></script>
 </body>
-</html>
+                </html>
