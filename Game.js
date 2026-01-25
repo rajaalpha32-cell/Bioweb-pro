@@ -1,12 +1,13 @@
 // --- FIREBASE INITIALIZATION (Based on your image) ---
+// Copy this exactly into your Game.js
 const firebaseConfig = {
-  apiKey: "AIzaSyB-I8ywYVNqtKORC_gg-AWH", // truncated for safety, ensure full key is here
-  authDomain: "bioweb-pro1.firebaseapp.com",
-  projectId: "bioweb-pro1",
-  storageBucket: "bioweb-pro1.firebasestorage.app",
-  messagingSenderId: "474478594127",
-  appId: "1:474478594127:web:bf8571904e",
-  measurementId: "G-Z1P4PEYRBC"
+  apiKey: "AIzaSyAay-w_djt2ecFZgtbjg7Dz", 
+  authDomain: "bioweb-pro-25a91.firebaseapp.com",
+  projectId: "bioweb-pro-25a91",
+  storageBucket: "bioweb-pro-25a91.firebasestorage.app",
+  messagingSenderId: "786082913850",
+  appId: "1:786082913850:web:3cdd23e653",
+  measurementId: "G-ZCE8B86KCM"
 };
 
 // Initialize Firebase
